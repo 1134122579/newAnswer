@@ -1,0 +1,14 @@
+<!--pages/answerList/index.wxml-->
+<div class="card">
+  <text class="title">{{className}}</text>
+</div>
+
+<view class="headderTop  listSyle flexBox" wx:for="{{classList}}" wx:key="id">
+  <view class=" ">
+    <text class="title">{{item.title}}</text>
+  </view>
+  <view class="">
+    <text class="button" data-id="{{item.id}}" bindtap="goanswer">开始答题</text>
+  </view>
+</view>
+

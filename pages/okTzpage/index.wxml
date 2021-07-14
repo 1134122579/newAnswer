@@ -1,0 +1,40 @@
+<!-- 顶部返回 -->
+<view class="headerStyle" style='height:{{navH}}px'>
+	<view class="navber flexBox">
+		<i-icon
+		 bindtap="goOut"
+		 class="wdithIcon"
+		 type="return"
+		 size="30"
+		/>
+	</view>
+</view>
+<!-- 挑战成功页面 -->
+<view class="headderTop flexBox topNULL" style="margin-top:{{navH}}px">
+	<view class="card ">
+		<text class="title">今日积分</text>
+		<view class="num">{{userinfo.toady_all_integral}}</view>
+	</view>
+	<view class="card">
+		<text class="title">今日目标</text>
+		<view class="num">{{ userinfo.tz_integral>=10?'达标':'未达标'}}</view>
+	</view>
+</view>
+<view class="headderTop flexBox  flexcolumn content_TZ">
+	<image
+	 wx:if="{{imageShow}}"
+	 class="logoImage"
+	 src="../../images/okTZ.jpeg"
+	 mode="widthFix"
+	/>
+	<view class="tz_text">
+		本次挑战
+		<text class="tz_num">{{yesProblemNum}}</text>
+		题，继续加油哦！
+	</view>
+	<view class="tz_text score">+{{score}}积分</view>
+	<i-button shape="circle" type="warning" size="small" class="gobutton" bind:click="goNewTz">再来一局</i-button>
+	<i-button shape="circle" type="success" size="small"  class="gobutton" bind:click="goOut">返回首页</i-button>
+
+</view>
+

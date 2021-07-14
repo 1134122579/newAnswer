@@ -1,0 +1,31 @@
+<!-- 学习积分  -->
+
+<div class="numList">
+  <div class="num_h">
+    今日积分：
+    <text class="num">{{userInfo.toady_all_integral}}</text>
+  </div>
+  <div class="num_h">
+    本年积分：
+    <text class="num">{{userInfo.year_score}}</text>
+  </div>
+
+  <div class="num_h">
+    上年积分：
+    <text class="num">{{userInfo.last_year_score}}</text>
+  </div>
+
+</div>
+
+<!-- 规则 -->
+
+
+<div class="numList js_contet">
+  <text class="title">积分规则</text>
+  <text class="displayInline">1、每日答题：答对一题1积分，答错不计分，每日上限10分。</text>
+  <text class="displayInline">2、每日挑战：连续答对5题开始计5积分，后每答对一题加1积分，每日上限10分。5题以内无论是否答对均不计积分。每局答对5至10题之间的，两局相加可得10积分，但非挑战成功。连续答对10题，挑战成功，得10积分。</text>
+  <text class="displayInline">3、每日积分必须获得20积分算达成目标。</text>
+  <text class="displayInline">4、年度积分必须获得7200积分算达成目标，</text>
+  <text class="displayInline">5、每日24时今日积分清零，计入本年积分；每年1月1日0时，本年积分清零，转为更新上年积分。</text>
+
+</div>

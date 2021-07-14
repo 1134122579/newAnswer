@@ -1,0 +1,39 @@
+/* pages/points/index.wxss */
+page{
+  background: #E57B2F;
+}
+.numList{
+  border-radius: 20rpx;
+  margin: 40rpx;
+  padding: 20rpx;
+  display: block;
+  background: #fff;
+}
+.num_h{
+  font-size: 38rpx;
+  color: #333;
+  font-weight: 800;
+  display: block;
+  padding: 10rpx ;
+  padding-left: 60rpx;
+}
+.num{
+  font-size: 42rpx;
+  color: #ff0000;
+}
+
+.displayInline{
+  display: inline-block;
+  /* padding: 6rpx 0; */
+  font-size: 38rpx;
+  line-height: 60rpx;
+}
+.title{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 48rpx;
+  padding: 10rpx 0;
+}
+.js_contet{
+  padding: 40rpx;
+}

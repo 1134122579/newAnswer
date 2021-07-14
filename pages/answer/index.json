@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "挑战答题",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "canvas-ring": "/components/canvas-ring/canvas-ring",
+    "i-button": "../../dist/button/index",
+    "i-toast": "../../dist/toast/index",
+    "i-modal": "../../dist/modal/index",
+    "Completion":"/components/Completion/Completion",
+    "i-icon": "../../dist/icon/index"
+  }
+}

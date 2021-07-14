@@ -1,0 +1,34 @@
+/* pages/answerList/index.wxss */
+.card{
+  display: block;
+  padding: 40rpx;
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 10rpx 5rpx #ccc;
+}
+.card .title{
+  font-size: 38rpx;
+  color: #333;
+  font-weight: 600;
+  border-left: 5rpx solid orange;
+  padding-left: 20rpx;
+}
+
+.headderTop{
+  padding: 40rpx;
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 10rpx 5rpx #ccc;
+}
+.button{
+  background: orange;
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.listSyle{
+  padding: 60rpx 20rpx;
+}

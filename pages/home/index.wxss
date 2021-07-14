@@ -1,0 +1,85 @@
+/* pages/home/index.wxss */
+.headerTop{
+  padding: 20rpx 20px ;
+  height: 100px;
+}
+.left{
+  justify-content: flex-start;
+  
+}
+.name{
+  font-size: 36rpx;
+  margin-left: 30rpx;
+}
+.remind-img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.mystyle{
+  margin-top: 20rpx;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 5rpx #ccc;
+}
+.marginTop{
+  margin-top: 150rpx;
+}
+.numStyle{
+  font-size: 38rpx;
+  color: #ff0000;
+
+}
+.numStyle .Num{
+  font-size: 50rpx !important;
+  margin-right: 20rpx;
+  font-weight: 700;
+}
+
+.card{
+  flex-wrap: wrap;
+  /* background: #fff; */
+  /* margin-top: 20rpx; */
+  /* padding: 10rpx 0 40rpx; */
+  /* box-shadow: 5rpx 5rpx 5rpx #ccc; */
+  /* border-radius: 10rpx; */
+
+}
+.w_card{
+  flex-shrink: 0;
+  background: #fff;
+  padding: 20rpx 0 ;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 5rpx #ccc;
+}
+.flexcloum{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  width: 46%;
+  margin-top: 40rpx;
+}
+.titleCard{
+  margin-top: 20rpx;
+}
+.title-img{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.remind{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background: #ccc;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+
+}
+.headerNumtext{
+  color: #333;
+}

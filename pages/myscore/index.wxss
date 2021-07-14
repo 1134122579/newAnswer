@@ -1,0 +1,87 @@
+/* pages/points/index.wxss */
+page{
+  background: #E57B2F;
+}
+.numList{
+  border-radius: 20rpx;
+  margin: 40rpx;
+  padding: 20rpx;
+  display: block;
+  background: #fff;
+}
+
+.num_h{
+  font-size: 38rpx;
+  color: #333;
+  font-weight: 800;
+  display: block;
+  padding: 10rpx ;
+  padding-left: 60rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.num{
+  font-size: 42rpx;
+  color: #ff0000;
+}
+.yaserTime{
+  padding-left: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 50rpx;
+}
+.yaserTime .num{
+  font-size: 50rpx;
+  
+}
+
+.displayInline{
+  display: inline-block;
+  padding: 6rpx 0;
+  line-height: 42rpx;
+
+}
+.title{
+  font-weight: 600;
+  font-size: 38rpx;
+  padding: 6rpx 0;
+
+}.tag{
+  font-size: 26rpx;
+  margin-left: 20rpx;
+
+}
+.js_contet{
+  padding: 40rpx;
+}
+.header_img{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}
+
+.listStyle{
+  margin-top: 20rpx;
+  max-height: 800rpx;
+  overflow-y: auto;
+}
+.man{
+  margin-top: 20rpx;
+}
+.left{
+  max-width: 60%;
+
+}
+.topNum{
+  font-size: 36rpx;
+}
+.yserNum{
+  font-size: 36rpx;
+}
+.arrMan{
+  margin-top: 40rpx;
+  /* background: red; */
+}

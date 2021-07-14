@@ -1,0 +1,42 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "今日答题",
+          "pathName": "pages/answer/index",
+          "query": "classId=7",
+          "scene": null
+        },
+        {
+          "name": "挑战",
+          "pathName": "pages/challenge/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "今日结算",
+          "pathName": "pages/okTzpage/index",
+          "query": "score=0",
+          "scene": null
+        },
+        {
+          "name": "导航",
+          "pathName": "pages/zzzzz/index",
+          "query": "score=0",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

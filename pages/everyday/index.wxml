@@ -1,0 +1,27 @@
+<!--pages/everyday/index.wxml-->
+<view class="content">
+<view class="headderTop flexBox">
+  <view class="card ">
+    <text class="title">今日积分</text>
+  <view class="num">{{userInfo.dt_integral}}</view>
+  </view>
+  <view class="card">
+    <text class="title">今日目标</text>
+  <view class="num">{{userInfo.dt_integral==10?"达标":'未达标'}}</view>
+  </view>
+</view>
+
+<view class="headderTop  listSyle flexBox" wx:for="{{classList}}"  wx:key="id">
+  <view class=" ">
+    <text class="item.title">{{item.title}}</text>
+  </view>
+  <view class="">
+    <text class="button" data-id="{{item.id}}" data-name="{{item.title}}" bindtap="goanswerList">进入答题</text>
+  </view>
+</view>
+</view>
+
+<!-- 认证  -->
+<i-modal title="认证" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3">
+    <view>是否跳转认证页面</view>
+</i-modal>

@@ -1,0 +1,96 @@
+/* pages/okTzpage/index.wxss */
+page {
+  background: #ff9933;
+  padding-bottom: 40rpx;
+  overflow: hidden;
+}
+.headerStyle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;left: 0;
+  right: 0;
+}
+
+/* 返回 */
+.navber {
+  width: 100%;
+  background: #fafafa;
+  /* height: 80rpx; */
+  /* height: 100%; */
+  padding: 10rpx 20px;
+  font-size: 34rpx;
+}
+.wdithIcon {
+  width: 150rpx;
+  display: inline-block;
+}
+
+/* 分数 */
+
+.headderTop {
+  padding: 40rpx;
+  background: #fafafa;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0rpx 10rpx 7rpx #ccc;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ff0000;
+}
+.num {
+  margin-top: 20rpx;
+  font-weight: 600;
+}
+
+/* 展示 */
+.content_TZ {
+  padding: 50rpx 0;
+  box-sizing: border-box;
+  min-height: 62%;
+}
+.logoImage {
+  display: inline;
+  width: 50%;
+  height: 150rpx;
+}
+.flexcolumn {
+  flex-direction: column;
+  justify-content: center;
+}
+.tz_text {
+  width: 48%;
+  font-size: 38rpx;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  margin: 20rpx 0;
+  letter-spacing: 4rpx;
+}
+.tz_num {
+  display: inline;
+  color: #ff0000;
+  font-size: 40rpx;
+}
+.gobutton {
+  width: 60%;
+  color: #fff;
+}
+.score {
+  color: #ccaf93;
+  font-weight: 600;
+  margin: 20rpx 0;
+  letter-spacing: 6rpx;
+}
+.gobutton .i-btn-circle {
+  background: #ccaf93 !important;
+}
+.topNULL{
+  margin-top: 0;
+}

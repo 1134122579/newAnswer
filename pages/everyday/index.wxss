@@ -1,0 +1,35 @@
+/* pages/everyday/index.wxss */
+
+.headderTop{
+  padding: 40rpx;
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 10rpx 5rpx #ccc;
+}
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ff0000;
+}
+.num{
+  margin-top: 20rpx;
+  font-weight: 600;
+}
+.button{
+  background: orange;
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.listSyle{
+  padding: 60rpx 20rpx;
+}
+.flexcolumn{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

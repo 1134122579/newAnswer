@@ -1,0 +1,10 @@
+
+ 
+function titleFilter(arry,data){
+    console.log(arry,data)
+ return (arry.indexOf(data)!=-1)?true:false
+}
+
+ module.exports={
+  titleFilter:titleFilter
+ }

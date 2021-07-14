@@ -1,0 +1,40 @@
+<!-- 学习积分 -->
+<view class="numList">
+	<view class="yaserTime num_h">
+		年度积分：
+		<text class="num">{{userInfo.year_score}}分</text>
+	</view>
+	<view class="num_h">
+		每日答题：
+		<text class="{{userInfo.dt_integral==10?'num':''}}">{{userInfo.dt_integral>=10?'达标':'未达标'}}</text>
+	</view>
+	<view class="num_h">
+		每日挑战：
+		<text class="{{userInfo.tz_integral==10?'num':''}}">{{userInfo.tz_integral>=10?'达标':'未达标'}}</text>
+	</view>
+	<view class="num_h">
+		本年目标：
+		<text class="{{userInfo.year_scor==7200?'num':''}}">{{userInfo.year_score>=7200?'达标':'未达标'}}</text>
+	</view>
+</view>
+<!-- 规则 -->
+<view class="numList js_contet">
+	<view class="inlie">
+		<text class="title">全行学习榜</text>
+		<text class="tag">相同积分按姓氏笔划排名</text>
+	</view>
+	<block class="listStyle">
+		<view class="arrMan">
+			<!-- 每一个人 -->
+			<view class="man flexBox" wx:for="{{Myscore}}" wx:key="*this">
+				<view class="left flexBox">
+					<text class="topNum">{{index+1}}</text>
+					<image class="header_img" src="{{item.headimgurl}}" />
+					<view class="name">{{item.name}}</view>
+				</view>
+				<view class="yserNum redcolor">{{item.score}}分</view>
+			</view>
+		</view>
+	</block>
+</view>
+

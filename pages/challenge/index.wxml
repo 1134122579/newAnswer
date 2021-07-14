@@ -1,0 +1,146 @@
+<!-- pages/answer/index.wxml -->
+<!-- 顶部返回 -->
+<view class="headerStyle">
+	<view class="navber flexBox">
+		<i-icon bindtap="goOut" class="wdithIcon" type="return" size="30" />
+		<text class="titleNav">挑战答题</text>
+		<view class="wdithIcon" />
+	</view>
+</view>
+<cover-view class="lookImage {{ !nolookimage||'nolookimage'}}">
+	<cover-image mode='aspectFill' class="qgimage" src="../../images/Qgimage.png" />
+</cover-view>
+<view class="content">
+	<!-- <view class="problemNum flexBox">
+    <view>正确 {{yesProblem.length}}</view>
+    <view>错误{{noProblem.length}}</view>
+    <view>还剩{{result.length}}</view>
+    <view>总题{{total}}</view>
+  </view> -->
+	<!-- 答题时间进度条 -->
+	<view class="centered" >
+		<canvas-ring id="canvasRing" canvasWidth="{{canvasWidth}}" value="{{c_val}}" title="{{title}}"
+		style="{{isCanvas?'display:none':''}}"
+			valueColor="{{valueColor}}" lineWidth="{{lineWidth}}" maxValue="{{maxValue}}" lineColor="{{lineColor}}"
+			suffix="{{suffix}}" />
+	</view>
+	<view class="flexBox">
+		<view class="className" wx:if="{{newOneproblem.type==1}}">单选题</view>
+		<view class="className" wx:if="{{newOneproblem.type==2}}">多选题</view>
+		<view class="className" wx:if="{{newOneproblem.type==3}}">填空题</view>
+		<view class="className" wx:if="{{newOneproblem.type==4}}">判断题</view>
+		<view>答对题数：{{yesProblem.length}}</view>
+	</view>
+	<!-- 单选 -->
+	<view wx:if="{{newOneproblem.type==1}}">
+		<view class="problem_title">{{newOneproblem.title}}</view>
+		<view class="radiolist">
+			<view
+				class="radio {{current==item.number?(problemStatus?'sureradio':'noRadio'):''}} {{!problemStatus?( newOneproblem.right_key!=item.number||'sureradio'):''}}"
+				wx:for="{{newOneproblem.ans}}" wx:key="index" data-number="{{item.number}}" bindtap="handleChange">
+				<text>{{item.number}} .{{item.content}}</text>
+			</view>
+		</view>
+		<!-- <view class="explain" wx:if="{{!problemStatus}}">
+			<view class="text">题解：<text>{{newOneproblem.right_key}}</text>
+			</view>
+			<view class="text">{{newOneproblem.explain}}</view>
+		</view> -->
+		<view class="butonStyle" wx:if="{{nextButtonShow}}">
+			<!-- <i-button bind:click="nextClick" type="success" shape="circle">下一题</i-button> -->
+		</view>
+	</view>
+	<!-- 多选题 -->
+	<view wx:if="{{newOneproblem.type==2}}">
+		<view class="problem_title">{{newOneproblem.title}}</view>
+		<view class="radiolist">
+			<view class="radio  {{tool.indexOf(ListProblemarry,item.number)>-1?(problemStatus?'sureradio':'noRadio'):''}}"
+				wx:for="{{newOneproblem.ans}}" wx:key="index" data-number="{{item.number}}" bindtap="handleChange">
+				<text>{{item.number}} .{{item.content}}</text>
+			</view>
+		</view>
+		<!-- <view class="explain" wx:if="{{!problemStatus}}">
+			<view class="text">题解：<text>{{newOneproblem.right_key}}</text>
+			</view>
+			<view class="text">{{newOneproblem.explain}}</view>
+		</view> -->
+		<view class="butonStyle" wx:if="{{isRadioProblemS}}">
+			<i-button bind:click="RadioProblemSClick" disabled="{{disabled}}" type="success" shape="circle">
+				确认
+			</i-button>
+		</view>
+		<view class="butonStyle" wx:if="{{nextButtonShow}}">
+			<!-- <i-button bind:click="nextClick" type="success" shape="circle">下一题</i-button> -->
+		</view>
+	</view>
+	<!-- 填空题 -->
+	<view wx:if="{{newOneproblem.type==3}}">
+		<view class="problem_title">
+			<Completion question="{{newOneproblem.title}}" bind:BlankEvent="BlankEvent" />
+		</view>
+		<!-- <view class="explain" wx:if="{{!problemStatus}}">
+			<view class="text">题解：<text>{{newOneproblem.right_key}}</text>
+			</view>
+			<view class="text">{{newOneproblem.explain}}</view>
+		</view> -->
+		<view class="butonStyle">
+			<i-button wx:if="{{isBtnActive}}" bind:click="CompletionClick" type="success" shape="circle">
+				确认
+			</i-button>
+			<view class="butonStyle" wx:if="{{isTbutton}}">
+				<!-- <i-button bind:click="nextClick" type="success" shape="circle">下一题</i-button> -->
+			</view>
+		</view>
+	</view>
+	<!-- 判断题 -->
+	<view wx:if="{{newOneproblem.type==4}}">
+		<view class="problem_title">{{newOneproblem.title}}</view>
+		<view class="radiolist">
+			<view
+				class="radio {{current==item.number?(problemStatus?'sureradio':'noRadio'):''}} {{!problemStatus?( newOneproblem.right_key!=item.number||'sureradio'):''}}"
+				wx:for="{{isSureList}}" wx:key="index" data-number="{{item.number}}" bindtap="handleChange">
+				<text>{{item.content}}</text>
+			</view>
+		</view>
+		<!-- <view class="explain" wx:if="{{!problemStatus}}">
+			<view class="text">题解：<text>{{newOneproblem.right_key==1?'正确':'错误'}}</text>
+			</view>
+			<view class="text">{{newOneproblem.explain}}</view>
+		</view> -->
+		<view class="butonStyle" wx:if="{{nextButtonShow}}">
+			<!-- <i-button bind:click="nextClick" type="success" shape="circle">下一题</i-button> -->
+		</view>
+	</view>
+</view>
+<!-- 弹窗警告 -->
+<i-modal title="退出答题" visible="{{ modalShow }}" actions="{{ actions5 }}" bind:click="handleClick3">
+	<view>确定要退出答题？</view>
+	<view>退出后作答历史将不会保存！</view>
+</i-modal>
+<i-toast id="toast" />
+<!-- 答题都失败弹窗 -->
+<view class="noProblem  {{noProblemShow||'nolook'}}">
+	<view class="noProblem_content">
+		<view class="noProblem_tag noProblem_buttonTop flexclunm">
+			<image class="noProblem_img" src="../../images/noProblem.png" mode="widthFix" />
+			<view class="noProblem_p">
+				本次答对
+				<text class="redColor">{{yesProblem.length}}</text>
+				题
+			</view>
+			<view class="noProblem_buttonTop ">
+				<i-button type="error" size="small"  i-class="buttonArr" bind:click="noYX">结束游戏</i-button>
+				<i-button type="primary" size="small" i-class="buttonArr"  bind:click="resuscitate">立即复活</i-button>
+			</view>
+			<view class="tag_text noProblem_p">每局仅可复活一次</view>
+		</view>
+	</view>
+</view>
+<!-- 认证页面 -->
+<!-- <wxs src="../../utils/comm.wxs" module="filter" /> -->
+<wxs module="tool">
+	function indexOf(array, value) {
+	return array.indexOf(value)
+	}
+	module.exports.indexOf = indexOf;
+</wxs>

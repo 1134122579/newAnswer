@@ -1,0 +1,154 @@
+page {
+  background: #ff9933;
+}
+
+.navber {
+  background: #fff;
+  height: 80rpx;
+  margin-top: 60rpx;
+  padding: 0 20px;
+  font-size: 34rpx;
+}
+.wdithIcon {
+  width: 150rpx;
+  display: inline-block;
+}
+.titleNav {
+  flex-shrink: 0;
+  text-align: center;
+}
+.lookImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10001;
+  background: #ccaf93;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  filter: Alpha(opacity=100);
+  transition: opacity 2s;
+}
+
+.nolookimage {
+  opacity: 0;
+  filter: Alpha(opacity=0);
+  display: none;
+}
+
+.qgimage {
+  width: 100%;
+}
+
+.content {
+  display: block;
+  border-radius: 10rpx;
+  margin: 40rpx;
+  padding: 20rpx;
+  background: #fff;
+}
+
+.centered {
+  width: 50%;
+  background: #fff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.className {
+  font-size: 40rpx;
+  font-weight: 800;
+  border-left: 10rpx solid #ff9933;
+  padding-left: 40rpx;
+  margin: 20rpx 0;
+}
+
+.problem_title {
+  display: inline-block;
+  width: 100%;
+  font-size: 36rpx;
+  color: #333;
+  padding: 20rpx 0;
+}
+
+.radiolist {
+  padding: 20rpx;
+}
+
+.radio {
+  background: #f2f2f2;
+  padding: 20rpx;
+  /* width: 80%; */
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+
+.sureradio {
+  background: #00b050;
+  color: #fff;
+}
+.noRadio {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* 答题错误的弹窗 */
+.noProblem {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+.noProblem_content {
+  width: 80%;
+  background: #fafafa;
+  padding: 20rpx 0;
+  border-radius: 20rpx;
+}
+
+.noProblem_img {
+  padding: 40rpx 0;
+  width: 80%;
+}
+.noProblem_buttonTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 90%; */
+}
+.flexclunm {
+  flex-direction: column;
+}
+.noProblem_p {
+  display: inline-block;
+  font-size: 26rpx;
+  width: 100%;
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.tag_text {
+  color: #cdbbaa;
+}
+.nolook {
+  display: none;
+}
+/* .button_round {
+  border-radius: 40rpx;
+  overflow: hidden;
+} */
+.noProblem_buttonTop .buttonArr{
+  border-radius: 20rpx;
+  
+}

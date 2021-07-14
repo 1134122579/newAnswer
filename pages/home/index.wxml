@@ -1,0 +1,49 @@
+<!--pages/home/index.wxml-->
+<!-- top -->
+
+<!-- 头部 -->
+<view class="headerTop redBackground ">
+  <!-- 个人资料 -->
+  <view class="mystyle flexBox marginTop" bindtap="goUserInfo">
+    <view class="left flexBox">
+      <text class="remind" wx:if="{{!userInfo.headimgurl}}">头像</text>
+      <image class="remind-img" src="{{userInfo.headimgurl}}" wx:if="{{userInfo.headimgurl}}"></image>
+      <view class="name" wx:if="{{userInfo.name}}">{{userInfo.name}}</view>
+      <view class="name" wx:if="{{!userInfo.name}}">我的名字</view>
+    </view>
+    <view class="right">
+      <i-icon type="enter" size="20" />
+    </view>
+  </view>
+  <!-- 积分信息 -->
+  <view class="mystyle flexBox ">
+    <view class="left flexBox">
+      <view class=" numStyle"> <text class="headerNumtext">今年积分: </text> <text class="Num">{{userInfo.year_score||0}}</text>积分</view>
+    </view>
+  </view>
+  <view class="card   flexBox ">
+    <view class="w_card flexBox flexcloum " bindtap="goevery">
+      <image class="title-img" src="../../images/image2.png"></image>
+      <text class="titleCard">每日答题</text>
+    </view>
+    <view class="w_card flexBox  flexcloum" bindtap="goChallenge">
+      <image class="title-img" src="../../images/image3.png"></image>
+      <text class="titleCard">每日挑战</text>
+    </view>
+    <view class="w_card flexBox flexcloum " bindtap="goPoints">
+      <image class="title-img" src="../../images/image1.png"></image>
+      <text class="titleCard">学习积分</text>
+    </view>
+    <view class="w_card flexBox flexcloum " bindtap="goMyscore">
+      <image class="title-img" src="../../images/image4.png"></image>
+      <text class="titleCard">学习报表</text>
+    </view>
+  </view>
+</view>
+
+<!-- 认证  -->
+<view>
+  <i-modal title="认证" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3">
+    <view>是否跳转认证页面?</view>
+</i-modal>
+</view>
