@@ -278,7 +278,11 @@ this.radioProblemS(number)
     },
   // 下一题
   nextClick() {
-
+    let {yesProblem}=this.data
+    if(yesProblem.length>=10){
+      this.noYX()
+      return
+    }
     // this.resuscitate()
     this.fromBegin();
   },

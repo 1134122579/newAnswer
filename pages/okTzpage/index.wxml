@@ -17,7 +17,7 @@
 	</view>
 	<view class="card">
 		<text class="title">今日目标</text>
-		<view class="num">{{ userinfo.tz_integral>=10?'达标':'未达标'}}</view>
+		<view class="num">{{ (userinfo.tz_integral>=10||yesProblemNum>=10)?'达标':'未达标'}}</view>
 	</view>
 </view>
 <view class="headderTop flexBox  flexcolumn content_TZ">
