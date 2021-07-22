@@ -43,6 +43,7 @@ Page({
     lineWidth: 5,
     canvasWidth: "",
     c_val: 0,
+    NumberProblem:5,//挑战成功的题数
     result: [], // 所有题目
     newOneproblem: {}, //当前题目
     yesProblem: [], //答对的题目
@@ -79,7 +80,6 @@ Page({
     } else {
       // 错误
       console.log("对不起你错了");
-      // this.setScore(); //分数计算
       this.reviveNum(); //是否复活
     }
   },
@@ -287,12 +287,13 @@ this.radioProblemS(number)
   // 获取答题
   fromBegin() {
       let that=this
+      let {NumberProblem}=this.data
       wx.showLoading({
         title: "请稍等..",
       });
       let {yesProblem}=this.data
       console.log("对数量",yesProblem)
-      if(yesProblem.length>=10){
+      if(yesProblem.length>=NumberProblem){
         this.noYX()
         return
       }

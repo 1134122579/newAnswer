@@ -14,7 +14,9 @@ Page({
     imageShow: false,
     yesProblemNum: null,
     userInfo:null,
-    navH:null
+    navH:null,
+    NumberProblem:5,//挑战成功的题数
+
   },
   //   从新挑战
   goNewTz() {
@@ -78,31 +80,31 @@ subTzProblem(){
    */
   onLoad: function (options) {
     let { score } = options;
-    let newScore=App.globalData.score+score
-
+    let {NumberProblem}=this.data
+    let newScore=App.globalData.score+(+score)
     this.setData({
-      yesProblemNum: score,
+      yesProblemNum: +score,
     });
-    if (score >= 10) {
+
+    if (score >= NumberProblem) {
       this.setData({
         imageShow: true,
-        score: 10,
+        score: NumberProblem,
       });
-    } else if (score < 10 && score >= 5) {
-      this.setData({
-        score: 5,
-      });
-    } else {
+    this.subTzProblem()
+    this.setData({
+      newScore:newScore>=10?10:newScore
+    })
+    App.globalData.score=App.globalData.score+Number(score) 
+
+    }  else {
       this.setData({
         imageShow: false,
         score: 0,
       });
     }
-    this.setData({
-      newScore:newScore>=10?10:newScore
-    })
-    App.globalData.score=App.globalData.score+Number(score) 
-    this.subTzProblem()
+
+    // 
   
   },
 

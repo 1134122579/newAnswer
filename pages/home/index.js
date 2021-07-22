@@ -103,6 +103,7 @@ Page({
       Api.getUserInfo().then(res => {
         App.globalData.userInfo = res
         console.log(App.globalData.userInfo )
+        App.globalData.score=res.tz_integral
         this.setData({
           userInfo: res
         })

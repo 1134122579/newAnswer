@@ -39,11 +39,11 @@
 	<view class="headderTop flexBox topNULL" style="margin-top:{{navH}}px">
 		<view class="card ">
 			<text class="title">今日积分</text>
-			<view class="num">{{userInfo.tz_integral>=10?userInfo.tz_integral:newScore}}</view>
+			<view class="num">{{userInfo.tz_integral>=10?'10':newScore}}</view>
 		</view>
 		<view class="card">
 			<text class="title">今日目标</text>
-			<view class="num">{{ (userInfo.tz_integral>=10||score>=10)?'达标':'未达标'}}</view>
+			<view class="num">{{ (userInfo.tz_integral>=10||newScore>=10)?'达标':'未达标'}}</view>
 		</view>
 	</view>
 	<view class="headderTop flexBox  flexcolumn content_TZ">
