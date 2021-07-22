@@ -1,6 +1,9 @@
 page {
   background: #ff9933;
 }
+.body{
+  overflow: hidden;
+}
 
 .navber {
   background: #fff;
@@ -152,3 +155,4 @@ page {
   border-radius: 20rpx;
   
 }
+

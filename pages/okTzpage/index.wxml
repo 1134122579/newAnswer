@@ -1,40 +1,60 @@
 <!-- 顶部返回 -->
-<view class="headerStyle" style='height:{{navH}}px'>
+<!-- <view class="headerStyle" style='height:{{navH}}px'>
 	<view class="navber flexBox">
-		<i-icon
-		 bindtap="goOut"
-		 class="wdithIcon"
-		 type="return"
-		 size="30"
-		/>
+		<i-icon bindtap="goOut" class="wdithIcon" type="return" size="30" />
+	</view>
+</view> -->
+<view class="body">
+	<view class="header">
+		<!-- 官方自定义导航栏抽取出来的模块 -->
+		<view class="navigation">
+			<view class="weui-navigation-bar {{extClass}}">
+				<view class="weui-navigation-bar__placeholder {{ios ? 'ios' : 'android'}}"
+					style="padding-top: {{statusBarHeight}}px;visibility: hidden;"></view>
+				<view class="weui-navigation-bar__inner {{ios ? 'ios' : 'android'}}"
+					style="padding-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
+					<!-- 左边的返回按钮图标，根据需求删除，记得把多余的css和js也删了 -->
+					<view class='weui-navigation-bar__left' style="{{leftWidth}}" bindtap="goOut">
+						<view class="weui-navigation-bar__buttons">
+							<view class="weui-navigation-bar__button weui-navigation-bar__btn_goback"></view>
+						</view>
+					</view>
+					<view class='weui-navigation-bar__center'>
+						<!-- 自定义导航标题 -->
+						<view class="navigation-title">
+							<!-- 从这里开始就是写自己的代码了 -->
+							<block>
+								<view data-index="{{index}}" class='selected-title'>
+									<text>挑战答题</text>
+								</view>
+							</block>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </view>
-<!-- 挑战成功页面 -->
-<view class="headderTop flexBox topNULL" style="margin-top:{{navH}}px">
-	<view class="card ">
-		<text class="title">今日积分</text>
-		<view class="num">{{userinfo.toady_all_integral}}</view>
+	<!-- 挑战成功页面 -->
+	<view class="headderTop flexBox topNULL" style="margin-top:{{navH}}px">
+		<view class="card ">
+			<text class="title">今日积分</text>
+			<view class="num">{{userInfo.tz_integral>=10?userInfo.tz_integral:newScore}}</view>
+		</view>
+		<view class="card">
+			<text class="title">今日目标</text>
+			<view class="num">{{ (userInfo.tz_integral>=10||score>=10)?'达标':'未达标'}}</view>
+		</view>
 	</view>
-	<view class="card">
-		<text class="title">今日目标</text>
-		<view class="num">{{ (userinfo.tz_integral>=10||yesProblemNum>=10)?'达标':'未达标'}}</view>
-	</view>
-</view>
-<view class="headderTop flexBox  flexcolumn content_TZ">
-	<image
-	 wx:if="{{imageShow}}"
-	 class="logoImage"
-	 src="../../images/okTZ.jpeg"
-	 mode="widthFix"
-	/>
-	<view class="tz_text">
-		本次挑战
-		<text class="tz_num">{{yesProblemNum}}</text>
-		题，继续加油哦！
-	</view>
-	<view class="tz_text score">+{{score}}积分</view>
-	<i-button shape="circle" type="warning" size="small" class="gobutton" bind:click="goNewTz">再来一局</i-button>
-	<i-button shape="circle" type="success" size="small"  class="gobutton" bind:click="goOut">返回首页</i-button>
+	<view class="headderTop flexBox  flexcolumn content_TZ">
+		<image wx:if="{{imageShow}}" class="logoImage" src="../../images/okTZ.jpeg" mode="widthFix" />
+		<view class="tz_text">
+			本次挑战
+			<text class="tz_num">{{yesProblemNum}}</text>
+			题，继续加油哦！
+		</view>
+		<view class="tz_text score">+{{score}}积分</view>
+		<i-button shape="circle" type="warning" size="small" class="gobutton" bind:click="goNewTz">再来一局</i-button>
+		<i-button shape="circle" type="success" size="small" class="gobutton" bind:click="goOut">返回首页</i-button>
 
-</view>
-
+	</view>

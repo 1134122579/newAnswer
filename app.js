@@ -59,6 +59,7 @@ App({
     // })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    score:0
   }
 })

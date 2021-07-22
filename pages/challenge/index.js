@@ -58,7 +58,8 @@ Page({
   },
   // 结束游戏
   noYX() {
-    let { yesProblem } = this.data;
+    let { yesProblem,timer } = this.data;
+    timer||clearTimeout(timer)
     wx.reLaunch({
       url: "/pages/okTzpage/index?score=" + yesProblem.length,
     });
@@ -279,10 +280,6 @@ this.radioProblemS(number)
   // 下一题
   nextClick() {
     let {yesProblem}=this.data
-    if(yesProblem.length>=10){
-      this.noYX()
-      return
-    }
     // this.resuscitate()
     this.fromBegin();
   },
@@ -293,6 +290,12 @@ this.radioProblemS(number)
       wx.showLoading({
         title: "请稍等..",
       });
+      let {yesProblem}=this.data
+      console.log("对数量",yesProblem)
+      if(yesProblem.length>=10){
+        this.noYX()
+        return
+      }
     Api.getTzProblem({}).then((res) => {
       console.log(res); 
       wx.hideLoading();
@@ -368,6 +371,24 @@ this.radioProblemS(number)
       timer:timers,
     });
   },
+      //自定义导航上内边距自适应
+      attached: function attached() {
+        var _this = this;
+        var isSupport = !!wx.getMenuButtonBoundingClientRect;
+        var rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+        wx.getSystemInfo({
+          success: function success(res) {
+            var ios = !!(res.system.toLowerCase().search('ios') + 1);
+            _this.setData({
+              ios: ios,
+              statusBarHeight: res.statusBarHeight,
+              innerWidth: isSupport ? 'width:' + rect.left + 'px' : '',
+              innerPaddingRight: isSupport ? 'padding-right:' + (res.windowWidth - rect.left) + 'px' : '',
+              leftWidth: isSupport ? 'width:' + (res.windowWidth - rect.left) + 'px' : ''
+            });
+          }
+        });
+      },
 
   /**
    * 生命周期函数--监听页面加载
@@ -383,6 +404,7 @@ this.radioProblemS(number)
    */
   onReady: function () {
     let that = this;
+    this.attached()
     this.setData({
       canvasWidth: windWidth * 0.25,
     });

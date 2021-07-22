@@ -18,7 +18,7 @@
   <!-- 积分信息 -->
   <view class="mystyle flexBox ">
     <view class="left flexBox">
-      <view class=" numStyle"> <text class="headerNumtext">今年积分: </text> <text class="Num">{{userInfo.year_score||0}}</text>积分</view>
+      <view class=" numStyle"> <text class="headerNumtext">本年积分: </text> <text class="Num">{{userInfo.year_score||0}}</text>积分</view>
     </view>
   </view>
   <view class="card   flexBox ">

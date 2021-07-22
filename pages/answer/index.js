@@ -473,6 +473,24 @@ Page({
       that.TJ()
     })
   },
+    //自定义导航上内边距自适应
+    attached: function attached() {
+      var _this = this;
+      var isSupport = !!wx.getMenuButtonBoundingClientRect;
+      var rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+      wx.getSystemInfo({
+        success: function success(res) {
+          var ios = !!(res.system.toLowerCase().search('ios') + 1);
+          _this.setData({
+            ios: ios,
+            statusBarHeight: res.statusBarHeight,
+            innerWidth: isSupport ? 'width:' + rect.left + 'px' : '',
+            innerPaddingRight: isSupport ? 'padding-right:' + (res.windowWidth - rect.left) + 'px' : '',
+            leftWidth: isSupport ? 'width:' + (res.windowWidth - rect.left) + 'px' : ''
+          });
+        }
+      });
+    },
 
   /**
    * 生命周期函数--监听页面加载
@@ -490,6 +508,7 @@ Page({
    */
   onReady: function () {
     let that = this;
+    this.attached()
     // this.setData({
     //   canvasWidth: windWidth * 0.25,
     // });

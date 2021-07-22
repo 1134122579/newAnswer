@@ -9,10 +9,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    newScore:0,
     score: 0,
     imageShow: false,
     yesProblemNum: null,
-    userinfo:null,
+    userInfo:null,
     navH:null
   },
   //   从新挑战
@@ -28,10 +29,10 @@ Page({
     });
   },
     // 获取个人信息
-    getUserInfo() {
+    getuserInfo() {
       let that = this
       if (Cache.getToken()) {
-        Api.getUserInfo().then(res => {
+        Api.getuserInfo().then(res => {
           App.globalData.userInfo = res
           console.log(App.globalData.userInfo )
           this.setData({
@@ -45,18 +46,40 @@ subTzProblem(){
     let { score } = this.data;
     let that=this
     if(score==0){
+      that.getuserInfo()
       return
     }
     Api.subTzProblem({score}).then(res=>{
         console.log(res)
-        that.getUserInfo()
+        that.getuserInfo()
     })
 },
+   //自定义导航上内边距自适应
+   attached: function attached() {
+    var _this = this;
+    var isSupport = !!wx.getMenuButtonBoundingClientRect;
+    var rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+    wx.getSystemInfo({
+      success: function success(res) {
+        var ios = !!(res.system.toLowerCase().search('ios') + 1);
+        _this.setData({
+          ios: ios,
+          statusBarHeight: res.statusBarHeight,
+          innerWidth: isSupport ? 'width:' + rect.left + 'px' : '',
+          innerPaddingRight: isSupport ? 'padding-right:' + (res.windowWidth - rect.left) + 'px' : '',
+          leftWidth: isSupport ? 'width:' + (res.windowWidth - rect.left) + 'px' : ''
+        });
+      }
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let { score } = options;
+    let newScore=App.globalData.score+score
+
     this.setData({
       yesProblemNum: score,
     });
@@ -75,7 +98,12 @@ subTzProblem(){
         score: 0,
       });
     }
+    this.setData({
+      newScore:newScore>=10?10:newScore
+    })
+    App.globalData.score=App.globalData.score+Number(score) 
     this.subTzProblem()
+  
   },
 
 
@@ -83,6 +111,7 @@ subTzProblem(){
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.attached()
     let navH=windowHeight*0.16
     console.log(navH)
     this.setData({
@@ -95,7 +124,7 @@ subTzProblem(){
    */
   onShow: function () {
       this.setData({
-          userinfo:App.globalData.userInfo
+        userInfo:App.globalData.userInfo
       })
   },
 
