@@ -49,7 +49,7 @@ Page({
     score: null,
     modalShow: false, //退出警告
     isRadioProblemS: false,
-    inputDisabled:false,
+    inputDisabled: false,
     revive: 1, //复活次数
     actions5: [{
         name: '退出'
@@ -121,7 +121,7 @@ Page({
       yesProblem
     } = this.data
     this.setData({
-      inputDisabled:true
+      inputDisabled: true
     })
     if (newOneproblem.right_key == CompletionAnswer) {
       yesProblem.push(newOneproblem);
@@ -345,12 +345,15 @@ Page({
         }, 1000)
         return
       }
+      // yesProblem: [], //答对的题目
+      // noProblem: [], //打错的题目
       this.setData({
         isBtnActive: false,
         loading: false,
         result: res,
+        yesProblem: [],
+        noProblem: [],
         // newOneproblem: res,
-
         total: res.length,
       });
       //   that.timeStting();
@@ -386,7 +389,7 @@ Page({
       isRadioProblemS: false,
       isTbutton: false,
       disabled: false,
-      inputDisabled:false,
+      inputDisabled: false,
       ListProblemarry: [],
     });
     // this.timeStting();
@@ -429,8 +432,8 @@ Page({
       noProblemShow: true
     })
   },
-//  提交成功后
-  TJ(){
+  //  提交成功后
+  TJ() {
     let that = this
     wx.hideLoading()
     that.setData({
@@ -463,7 +466,7 @@ Page({
       button: true,
       TJdisabled: true
     })
-    if(yesProblem.length==0){
+    if (yesProblem.length == 0) {
       that.TJ()
       return
     }
@@ -473,24 +476,24 @@ Page({
       that.TJ()
     })
   },
-    //自定义导航上内边距自适应
-    attached: function attached() {
-      var _this = this;
-      var isSupport = !!wx.getMenuButtonBoundingClientRect;
-      var rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
-      wx.getSystemInfo({
-        success: function success(res) {
-          var ios = !!(res.system.toLowerCase().search('ios') + 1);
-          _this.setData({
-            ios: ios,
-            statusBarHeight: res.statusBarHeight,
-            innerWidth: isSupport ? 'width:' + rect.left + 'px' : '',
-            innerPaddingRight: isSupport ? 'padding-right:' + (res.windowWidth - rect.left) + 'px' : '',
-            leftWidth: isSupport ? 'width:' + (res.windowWidth - rect.left) + 'px' : ''
-          });
-        }
-      });
-    },
+  //自定义导航上内边距自适应
+  attached: function attached() {
+    var _this = this;
+    var isSupport = !!wx.getMenuButtonBoundingClientRect;
+    var rect = wx.getMenuButtonBoundingClientRect ? wx.getMenuButtonBoundingClientRect() : null;
+    wx.getSystemInfo({
+      success: function success(res) {
+        var ios = !!(res.system.toLowerCase().search('ios') + 1);
+        _this.setData({
+          ios: ios,
+          statusBarHeight: res.statusBarHeight,
+          innerWidth: isSupport ? 'width:' + rect.left + 'px' : '',
+          innerPaddingRight: isSupport ? 'padding-right:' + (res.windowWidth - rect.left) + 'px' : '',
+          leftWidth: isSupport ? 'width:' + (res.windowWidth - rect.left) + 'px' : ''
+        });
+      }
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -500,6 +503,7 @@ Page({
       classId
     } = options;
     console.log(options);
+
     this.fromBegin(classId);
   },
 
