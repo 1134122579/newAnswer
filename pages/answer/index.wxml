@@ -58,7 +58,9 @@
 			<view class="className" wx:if="{{newOneproblem.type==2}}">多选题</view>
 			<view class="className" wx:if="{{newOneproblem.type==3}}">填空题</view>
 			<view class="className" wx:if="{{newOneproblem.type==4}}">判断题</view>
-			<view class="NextNum {{problemStatus?'ok':'no'}}">{{10-result.length}}</view>
+			<!-- <view class="NextNum {{problemStatus?'ok':'no'}}">{{10-result.length}}</view> -->
+			<view class="NextNum {{problemStatus?'ok':'no'}}">{{nextNumber}}</view>
+
 			<view>正确：{{yesProblem.length}}</view>
 		</view>
 		<!-- 单选 -->

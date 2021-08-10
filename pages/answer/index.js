@@ -24,6 +24,7 @@ Page({
     disabled: false,
     ListProblemarry: [], //多选的值
     isTbutton: false,
+    nextNumber:0,//第几题
     isBtnActive: false, //是否展示确认按钮
     CompletionAnswer: null, //天空答案
     timer: null,
@@ -364,7 +365,7 @@ Page({
   oneProblem() {
     let that = this;
     let {
-      result
+      result,nextNumber
     } = this.data;
     wx.hideLoading()
     console.log("还有几个题目", result);
@@ -379,6 +380,7 @@ Page({
     let oneprlem = result.splice(0, 1);
     this.setData({
       result,
+      nextNumber:nextNumber+1,
       newOneproblem: oneprlem[0],
       nextButtonShow: false,
       problemStatus: true,

@@ -81,9 +81,10 @@ subTzProblem(){
   onLoad: function (options) {
     let { score } = options;
     let {NumberProblem}=this.data
-    let newScore=App.globalData.score+(+score)
+    let newScore=App.globalData.score
     this.setData({
       yesProblemNum: +score,
+      newScore
     });
 
     if (score >= NumberProblem) {
@@ -93,9 +94,9 @@ subTzProblem(){
       });
     this.subTzProblem()
     this.setData({
-      newScore:newScore>=10?10:newScore
+      newScore:NumberProblem
     })
-    App.globalData.score=App.globalData.score+Number(score) 
+    App.globalData.score=NumberProblem
 
     }  else {
       this.setData({

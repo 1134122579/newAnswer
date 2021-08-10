@@ -10,11 +10,11 @@
 	</view>
 	<view class="num_h">
 		每日挑战：
-		<text class="{{userInfo.tz_integral==10?'num':''}}">{{userInfo.tz_integral>=10?'达标':'未达标'}}</text>
+		<text class="{{userInfo.tz_integral==5?'num':''}}">{{userInfo.tz_integral>=5?'达标':'未达标'}}</text>
 	</view>
 	<view class="num_h">
 		本年目标：
-		<text class="{{userInfo.year_scor==7200?'num':''}}">{{userInfo.year_score>=7200?'达标':'未达标'}}</text>
+		<text class="{{userInfo.year_scor==4500?'num':''}}">{{userInfo.year_score>=4500?'达标':'未达标'}}</text>
 	</view>
 </view>
 <!-- 规则 -->
