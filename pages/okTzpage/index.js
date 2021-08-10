@@ -82,10 +82,13 @@ subTzProblem(){
     let { score } = options;
     let {NumberProblem}=this.data
     let newScore=App.globalData.score
+    let is_tz=App.globalData.is_tz
     this.setData({
       yesProblemNum: +score,
-      newScore
+      newScore,
+      is_tz
     });
+  
 
     if (score >= NumberProblem) {
       this.setData({
@@ -97,7 +100,7 @@ subTzProblem(){
       newScore:NumberProblem
     })
     App.globalData.score=NumberProblem
-
+     App.globalData.is_tz=true
     }  else {
       this.setData({
         imageShow: false,

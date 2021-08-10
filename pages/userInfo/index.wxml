@@ -1,8 +1,8 @@
 <!--pages/userInfo/index.wxml-->
 <i-panel title="个人信息">
-  <i-input value="{{ name }}" type="text" right title="姓名"  placeholder="请输入姓名"  bind:change="nameChange"  maxlength="5"/>
+  <i-input value="{{ name }}" type="text" right title="姓名"  placeholder="请输入姓名"  bind:change="nameChange"  />
   <i-input value="{{ mobile }}" type="number" right  title="手机号" mode="normal" placeholder="请输入手机号" bind:change="mobileChange"  maxlength="11"/>
   <i-input value="{{ department }}" type="text" right  title="部门" mode="normal" placeholder="请输入部门" 
-  bind:change="departmentChange" maxlength="10"/>
+  bind:change="departmentChange" />
 </i-panel>
 <i-button bind:click="handleClick" disabled="{{disabled}}"  type="primary" shape="circle" bind:click="submit">立即提交</i-button>

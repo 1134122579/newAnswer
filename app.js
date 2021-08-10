@@ -60,6 +60,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    score:0
+    score:0,
+    is_tz:false,
   }
 })
