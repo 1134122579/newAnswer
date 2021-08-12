@@ -5,8 +5,8 @@
   },
   "setting": {
     "urlCheck": false,
-    "es6": true,
-    "enhance": false,
+    "es6": false,
+    "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -16,7 +16,7 @@
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
-    "uglifyFileName": false,
+    "uglifyFileName": true,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
@@ -30,7 +30,6 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
     "useIsolateContext": true,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
@@ -40,7 +39,6 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.18.0",
-  "appid": "wxdd3417f141574c0b",
   "projectname": "%E7%AD%94%E9%A2%98%E5%B0%8F%E7%A8%8B%E5%BA%8F",
   "debugOptions": {
     "hidedInDevtools": []
@@ -51,6 +49,7 @@
     "servePath": ""
   },
   "isGameTourist": false,
+  "appid": "wxdd3417f141574c0b",
   "condition": {
     "search": {
       "list": []

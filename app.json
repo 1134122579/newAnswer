@@ -2,7 +2,6 @@
   "pages": [
     "pages/home/index",
     "pages/zzzzz/index",
-
     "pages/okTzpage/index",
     "pages/challenge/index",
     "pages/answer/index",

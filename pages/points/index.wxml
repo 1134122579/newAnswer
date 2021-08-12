@@ -23,9 +23,9 @@
 <div class="numList js_contet">
   <text class="title">积分规则</text>
   <text class="displayInline">1、每日答题：答对一题1积分，答错不计分，每日上限10分。</text>
-  <text class="displayInline">2、每日挑战：连续答对5题开始计5积分，后每答对一题加1积分，每日上限10分。5题以内无论是否答对均不计积分。每局答对5至10题之间的，两局相加可得10积分，但非挑战成功。连续答对10题，挑战成功，得10积分。</text>
-  <text class="displayInline">3、每日积分必须获得20积分算达成目标。</text>
-  <text class="displayInline">4、年度积分必须获得7200积分算达成目标，</text>
-  <text class="displayInline">5、每日24时今日积分清零，计入本年积分；每年1月1日0时，本年积分清零，转为更新上年积分。</text>
+  <text class="displayInline">2、每日挑战：每局共设5题，每题1积分，连续答对5题（含复活1次）即挑战成功，得5积分，未连答对5题（复活1次），挑战失败不得分，每日上限5分</text>
+  <text class="displayInline">3、每日积分必须获得15积分算达成目标。</text>
+  <text class="displayInline">4、年度积分必须获得4500积分算达成目标，</text>
+  <text class="displayInline">5、次日0时今日积分清零，计入本年积分；每年1月1日0时，本年积分清零，转为更新上年积分</text>
 
 </div>

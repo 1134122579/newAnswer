@@ -76,6 +76,9 @@ page{
 
 }
 .topNum{
+  width:60rpx;
+  display: inline-block;
+  text-align: center;
   font-size: 36rpx;
 }
 .yserNum{
